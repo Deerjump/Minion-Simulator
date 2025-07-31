@@ -857,5 +857,5 @@ export const minions = {
     ],
     speed: [26, 26, 24, 24, 22, 22, 19, 19, 16, 16, 12],
   },
-} as const satisfies { [key: string]: MinionStats };
+} as const satisfies Record<string, MinionStats>;
 export type MinionType = keyof typeof minions;

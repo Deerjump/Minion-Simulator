@@ -5,22 +5,30 @@ import { MinionSimulator } from './services/minionSimulator';
 const DAY_IN_SECONDS = 86_400;
 
 function App() {
-  const zombieMinionResources = new MinionSimulator(
-    'ZOMBIE'
-  ).calculateRates(DAY_IN_SECONDS);
-  const revenantMinionResources = new MinionSimulator(
-    'REVENANT'
+  const zombieMinionResources = new MinionSimulator('ZOMBIE').calculateRates(
+    DAY_IN_SECONDS
+  );
+  const boostedZombieMinionResources = new MinionSimulator(
+    'ZOMBIE',
+    'TASTY_CHEESE'
   ).calculateRates(DAY_IN_SECONDS);
 
-  console.log(Object.keys(minions))
+  console.log(Object.keys(minions));
   return (
     <>
       <div>
-        The Zombie Minion generates {zombieMinionResources.map(resource => `${resource.name}: ${resource.amount}`). join(', ')} per day
+        The Zombie Minion generates {' '}
+        {zombieMinionResources
+          .map((resource) => `${resource.name}: ${resource.amount}`)
+          .join(', ')}{' '}
+        per day
       </div>
       <div>
-        The Revenant Minion generates {revenantMinionResources.map(resource => `${resource.name}: ${resource.amount}`). join(', ')} per
-        day
+        The boosted Zombie Minion generates {' '} 
+        {boostedZombieMinionResources
+          .map((resource) => `${resource.name}: ${resource.amount}`)
+          .join(', ')}{' '}
+        per day
       </div>
     </>
   );

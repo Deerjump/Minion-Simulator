@@ -1,58 +1,63 @@
 export type Fuel = {
-  name: string,
-  boost: number
-  type: 'SPEED' | 'OUTPUT'| 'SPECIAL'
-}
+  name: string;
+  boost: number;
+  type: 'SPEED' | 'OUTPUT' | 'SPECIAL';
+};
 export const fuelTypes = {
+  NONE: {
+    name: 'no fuel',
+    boost: 0,
+    type: 'SPEED',
+  },
   HAMSTER_WHEEL: {
     name: 'Hamster Wheel',
     boost: 0.5,
-    type: 'SPEED'
+    type: 'SPEED',
   },
   FOUL_FLESH: {
     name: 'Foul Flesh',
     boost: 0.9,
-    type: 'SPEED'
+    type: 'SPEED',
   },
   CATALYST: {
     name: 'Catalyst',
     boost: 3,
-    type: 'OUTPUT'
+    type: 'OUTPUT',
   },
   HYPER_CATALYST: {
     name: 'Hyper Catalyst',
     boost: 4,
-    type: 'OUTPUT'
+    type: 'OUTPUT',
   },
   TASTY_CHEESE: {
     name: 'Tasty Cheese',
     boost: 2,
-    type: 'OUTPUT'
+    type: 'OUTPUT',
   },
   INFERNO_MINION_FUEL: {
     name: 'Inferno Minion Fuel',
     boost: 1,
-    type: 'SPECIAL'
+    type: 'SPECIAL',
   },
   ENCHANTED_LAVA_BUCKET: {
     name: 'Enchanted Lava Bucket',
     boost: 0.25,
-    type: 'SPEED'
+    type: 'SPEED',
   },
   MAGMA_BUCKET: {
     name: 'Magma Bucket',
     boost: 0.3,
-    type: 'SPEED'
+    type: 'SPEED',
   },
   PLASMA_BUCKET: {
     name: 'Plasma Bucket',
     boost: 0.35,
-    type: 'SPEED'
+    type: 'SPEED',
   },
   EVERBURNING_FLAME: {
     name: 'Everburning Flame',
     boost: 0.35,
-    type: 'SPECIAL'
-  }
+    type: 'SPECIAL',
+  },
 } as const satisfies Record<string, Fuel>;
-export type FuelType = keyof typeof fuelTypes
+export type FuelType = keyof typeof fuelTypes;
